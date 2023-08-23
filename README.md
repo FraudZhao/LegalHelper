@@ -17,7 +17,9 @@ A：第1步，您需要在您的电脑上安装Python。它的官网是：https:
   复制“pip install pyperclip”（不要带引号），并按回车，等待下载结束。
   一般来说，下载读条结束后出现白色、黄色字样，代表下载成功。出现红色字样，则代表您的网络有问题，您可以用手机给电脑开热点，或者你懂的:）。
   
-  使用macOS的用户，请自行查找mac上使用pip命令的方法（抱歉我忘了），安装python-docx库（注意python和docx中间有个杠！！！）和pyperclip库。
+  使用macOS的用户，打开终端（terminal），执行以下操作：
+  复制“pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple python-docx”（不要带引号），并按回车，等待下载结束。
+  复制“pip3 install pyperclip”（不要带引号），并按回车，等待下载结束。
 
   第3步，请从网页中下载“法典小助手.zip”并解压。至此，法典小助手安装完毕。
 
