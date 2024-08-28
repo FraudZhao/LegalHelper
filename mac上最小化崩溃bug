@@ -1,0 +1,17 @@
+在mac系统上使用法典小助手时，最小化后有时会打不开，一直不是很在意。
+但是，mac的dock本来就窄，开一个实例还要弹两个图标————程序本体和launcher，总开个新的也不是个事。
+于是着手解决此问题，根据报错，查找资料，发现是mac自带的中文输入法的bug，只要程序最小化时有一瞬间在中文输入法上就崩。
+目前无解，只能先凑合用。
+
+资料：https://blog.csdn.net/qq_27281247/article/details/124170251
+
+报错内容：
+2024-08-29 00:40:12.202 Python[4492:76279] _TIPropertyValueIsValid called with 4 on nil context!
+2024-08-29 00:40:12.202 Python[4492:76279] imkxpc_getApplicationProperty:reply: called with incorrect property value 4, bailing.
+2024-08-29 00:40:12.202 Python[4492:76279] Text input context does not respond to _valueForTIProperty:
+2024-08-29 00:40:12.203 Python[4492:76279] _TIPropertyValueIsValid called with 4 on nil context!
+2024-08-29 00:40:12.203 Python[4492:76279] imkxpc_getApplicationProperty:reply: called with incorrect property value 4, bailing.
+2024-08-29 00:40:12.203 Python[4492:76279] Text input context does not respond to _valueForTIProperty:
+2024-08-29 00:40:12.203 Python[4492:76279] _TIPropertyValueIsValid called with 4 on nil context!
+2024-08-29 00:40:12.203 Python[4492:76279] imkxpc_getApplicationProperty:reply: called with incorrect property value 4, bailing.
+2024-08-29 00:40:12.203 Python[4492:76279] Text input context does not respond to _valueForTIProperty:
