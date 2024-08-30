@@ -1,10 +1,12 @@
 在mac系统上使用法典小助手时，最小化后有时会打不开，一直不是很在意。
 但是，mac的dock本来就窄，开一个实例还要弹两个图标————程序本体和launcher，总开个新的也不是个事。
-于是着手解决此问题，根据报错，查找资料，发现是mac自带的中文输入法的bug，只要程序最小化时有一瞬间在中文输入法上就崩。
-目前无解，只能先凑合用。
+于是着手解决此问题，发现存在两个问题。
 
-资料：https://blog.csdn.net/qq_27281247/article/details/124170251
+问题1:最小化后点dock图标，无法还原。
+解决方案：root.createcommand('tk::mac::ReopenApplication', root.deiconify)
+来源：https://www.zhihu.com/question/49539078/answer/117129361
 
+问题2:最小化时，只要切到中午输入法，就会报错
 报错内容：
 2024-08-29 00:40:12.202 Python[4492:76279] _TIPropertyValueIsValid called with 4 on nil context!
 2024-08-29 00:40:12.202 Python[4492:76279] imkxpc_getApplicationProperty:reply: called with incorrect property value 4, bailing.
@@ -15,3 +17,8 @@
 2024-08-29 00:40:12.203 Python[4492:76279] _TIPropertyValueIsValid called with 4 on nil context!
 2024-08-29 00:40:12.203 Python[4492:76279] imkxpc_getApplicationProperty:reply: called with incorrect property value 4, bailing.
 2024-08-29 00:40:12.203 Python[4492:76279] Text input context does not respond to _valueForTIProperty:
+资料：https://blog.csdn.net/qq_27281247/article/details/124170251
+确定为mac自带输入法问题。
+解决方案：考虑在最小化时把程序锁上，但是不开锁就不能还原。尝试运用多线程，所有功能写入主线程，最小化时锁主线程，副线程专管开锁。
+
+
