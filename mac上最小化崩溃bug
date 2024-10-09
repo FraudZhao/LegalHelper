@@ -1,12 +1,14 @@
-在mac系统上使用法典小助手时，最小化后有时会打不开，一直不是很在意。
-但是，mac的dock本来就窄，开一个实例还要弹两个图标————程序本体和launcher，总开个新的也不是个事。
-于是着手解决此问题，发现存在两个问题。
+问题描述：在mac系统上使用法典小助手时，最小化后有时会打不开
+解决方案：
+方案一：在设置-桌面与程序坞中关闭“将窗口最小化至应用程序图标”。
+方案二：不关闭该选项的话，最小化后，右击python图标，在弹出的列表中选择法典小助手并点击。
 
+
+其他问题：
 问题1:最小化后点dock图标，无法还原。
 解决方案：root.createcommand('tk::mac::ReopenApplication', root.deiconify)
 来源：https://www.zhihu.com/question/49539078/answer/117129361
-
-问题2:最小化时，只要切到中午输入法，就会报错
+问题2:最小化时，只要切到中文输入法，就会报错。
 报错内容：
 2024-08-29 00:40:12.202 Python[4492:76279] _TIPropertyValueIsValid called with 4 on nil context!
 2024-08-29 00:40:12.202 Python[4492:76279] imkxpc_getApplicationProperty:reply: called with incorrect property value 4, bailing.
